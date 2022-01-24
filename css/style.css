@@ -58,6 +58,10 @@ select {
   display: grid;
   gap: 1rem, 1rem; }
 
+.flow > *:where(:not(:first-child)) {
+  margin-top: 1rem;
+  outline: 1px solid red; }
+
 .container {
   padding-inline: 2em;
   margin-inline: auto;
