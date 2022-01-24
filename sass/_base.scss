@@ -28,3 +28,23 @@ picture {
   max-width: 100%;
   display: block;
 }
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+// Remove Animations for people which turned them OFF
+@media (prefers-reduced-motion: reduce) {
+  // no-preference or reduce
+  *,
+  *::after,
+  *::before {
+    animation-duration: 0.01s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01s !important;
+    scroll-behavior: auto !important;
+  }
+}
