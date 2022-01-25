@@ -1,0 +1,85 @@
+// Buttons
+.large-btn {
+  position: relative;
+  display: grid;
+  z-index: 1;
+  place-items: center; //align-items justify-items shortend
+  padding: 0 2em;
+  aspect-ratio: 1;
+  text-decoration: none;
+  border-radius: 50%;
+
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background: rgba($clr-white, 0.15);
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity 0.5s linear, transform 0.5s ease-in-out;
+  }
+
+  &:hover::after,
+  &:focus::after {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+}
+
+.primary-navigation {
+  --gap: 8rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  & a {
+    text-decoration: none;
+  }
+
+  & a > span {
+    font-weight: 700;
+    margin-right: 0.5em;
+  }
+}
+
+.underline-indicators {
+  > * {
+    padding: var(--underline-gap, 1rem) 0;
+    border-bottom: 0.2rem solid $clr-white;
+  }
+
+  & > *:hover,
+  & > *:focus {
+    border-color: rgba($clr-white, 0.5);
+  }
+
+  & > .active,
+  & > [aria-selected="true"] {
+    border-color: rgba($clr-white, 1);
+  }
+}
+
+.tab-list {
+  gap: 2rem;
+}
+
+.dot-indicators {
+  & > * {
+    cursor: pointer;
+    border: 0;
+    border-radius: 50%;
+    padding: 0.5em;
+    background-color: rgba($clr-white, 0.25);
+  }
+
+  & > *:hover,
+  & > *:focus {
+    background-color: rgba($clr-white, 0.5);
+  }
+
+  & > [aria-selected="true"] {
+    background-color: rgba($clr-white, 1);
+  }
+}
